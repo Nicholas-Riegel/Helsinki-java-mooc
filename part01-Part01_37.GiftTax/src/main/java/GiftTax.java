@@ -4,10 +4,12 @@ import java.util.Scanner;
 public class GiftTax {
 
     public static void main(String[] args) {
+        
         Scanner scan = new Scanner(System.in);
         System.out.println("Value of gift?");
         double answer = Double.valueOf(scan.nextLine());
         double tax = 0;
+
         if (answer >= 1000000){
             tax = 142100 + (answer - 1000000) * .17;
         } else if (answer >= 200000){
