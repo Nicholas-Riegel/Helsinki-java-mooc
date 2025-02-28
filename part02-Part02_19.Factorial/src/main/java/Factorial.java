@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class Factorial {
@@ -8,7 +7,7 @@ public class Factorial {
         System.out.print("Give a number: ");
         int num = Integer.valueOf(scanner.nextLine());
         int factorial = 1;
-        if (num > 0){
+        if (num > 1){
             for (int i = 1; i <= num; i++){
                 factorial *= i;
             }

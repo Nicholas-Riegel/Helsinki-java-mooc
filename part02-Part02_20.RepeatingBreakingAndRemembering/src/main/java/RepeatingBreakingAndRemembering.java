@@ -13,6 +13,30 @@ public class RepeatingBreakingAndRemembering {
         // the parts you haven't done, but you'll get points for the finished parts.
         
         Scanner scanner = new Scanner(System.in);
-
+        int even = 0;
+        int odd = 0;
+        int sum = 0;
+        int total = 0;
+        System.out.println("Give numbers:");
+        while (true) {
+            int num = Integer.valueOf(scanner.nextLine());
+            if (num == -1){
+                break;
+            }
+            if (num % 2 == 0){
+                even++;
+            } else {
+                odd++;
+            }
+            sum += num;
+            total++;
+        }
+        double average = (double) sum / total;
+        System.out.println("Thx! Bye!");
+        System.out.println("Sum: "+sum);
+        System.out.println("Numbers: "+total);
+        System.out.println("Average: "+average);
+        System.out.println("Even: "+even);
+        System.out.println("Odd: "+odd);
     }
 }
