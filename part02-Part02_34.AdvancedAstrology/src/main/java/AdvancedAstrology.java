@@ -28,19 +28,22 @@ public class AdvancedAstrology {
     }
 
     public static void christmasTree(int height) {
+        
         int spaces = height - 1;
         int stars = 1;
-        int trunk = 3;
+        int trunkWidth = 3;
         int spacesToTrunk = height - 2;
+        
         while (spaces >= 0) {
             printSpaces(spaces);
             printStars(stars);
             spaces--;
             stars = stars + 2;
         }
+        
         for (int i = 0; i < 2; i++){
             printSpaces(spacesToTrunk);
-            printStars(trunk);
+            printStars(trunkWidth);
         }
     }
 
