@@ -13,7 +13,6 @@ public class FirstAndLast {
             if (input.equals("")) {
                 break;
             }
-
             list.add(input);
         }
         String first = list.get(0);
