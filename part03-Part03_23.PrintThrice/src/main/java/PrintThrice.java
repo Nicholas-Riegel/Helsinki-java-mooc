@@ -7,6 +7,9 @@ public class PrintThrice {
         Scanner scanner = new Scanner(System.in);
 
         // Write your program here
-
+        String answer = scanner.nextLine();
+        System.out.print(answer);
+        System.out.print(answer);
+        System.out.print(answer);
     }
 }
