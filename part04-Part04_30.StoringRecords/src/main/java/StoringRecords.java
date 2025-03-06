@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class StoringRecords {
 
     public static void main(String[] args) {
+
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Filename:");
@@ -25,6 +26,18 @@ public class StoringRecords {
 
         // Write here the code for reading from file
         // and printing the read records
+        try (Scanner reader = new Scanner(Paths.get(file))){
+            while (reader.hasNextLine()) {
+                String row = reader.nextLine();
+                String[] array = row.split(",");
+                Person person = new Person(array[0], Integer.valueOf(array[1]));
+                persons.add(person);
+            }
+
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        
         return persons;
 
     }

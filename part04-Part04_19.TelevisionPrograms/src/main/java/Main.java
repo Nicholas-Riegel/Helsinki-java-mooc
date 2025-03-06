@@ -9,5 +9,22 @@ public class Main {
         ArrayList<TelevisionProgram> programs = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
 
+        while (true) {
+            System.out.println("Name: ");
+            String title = scanner.nextLine();
+            if (title.isEmpty()){
+                break;
+            }
+            System.out.println("Duration: ");
+            int duration = Integer.valueOf(scanner.nextLine());
+            programs.add(new TelevisionProgram(title, duration));
+        }
+        System.out.println("Program's maximum duration? ");
+        int max = Integer.valueOf(scanner.nextLine());
+        for (TelevisionProgram program : programs){
+            if (program.getDuration() <= max){
+                System.out.println(program);
+            }
+        }
     }
 }
