@@ -120,7 +120,7 @@ public class SportStatisticTest {
         String fileName = "file1.txt";
         String textToWriteToTheFile = "bestTeam,superteam,32,34\nbatman,superman,30,31\nbatman,robin,1,0\ncats,dogs,3,0";
         deleteAndCreateNew(fileName, textToWriteToTheFile.split("\n"));
-        io.setSysIn(fileName + "\nsuperman\n");
+        io.setSysIn(fileName + "\nspiderman\n");
         
         try {
             SportStatistics.main(new String[]{});
@@ -130,8 +130,8 @@ public class SportStatisticTest {
             deleteFile(fileName);
         }
        
-        assertTrue("With the file:\n" + textToWriteToTheFile + "\nWhen searching for superman the output should have the line \"Wins: 1\".\nthe output was:\n" + io.getSysOut(), lines(io.getSysOut()).stream().filter(l -> l.contains("Wins: 1")).count() == 1);
-        assertTrue("With the file:\n" + textToWriteToTheFile + "\nWhen searching for superman the output should have the line \"Losses: 0\".\nthe output was:\n" + io.getSysOut(), lines(io.getSysOut()).stream().filter(l -> l.contains("Losses: 0")).count() == 1);
+        assertTrue("With the file:\n" + textToWriteToTheFile + "\nWhen searching for spiderman the output should have the line \"Wins: 0\".\nthe output was:\n" + io.getSysOut(), lines(io.getSysOut()).stream().filter(l -> l.contains("Wins: 0")).count() == 1);
+        assertTrue("With the file:\n" + textToWriteToTheFile + "\nWhen searching for spiderman the output should have the line \"Losses: 0\".\nthe output was:\n" + io.getSysOut(), lines(io.getSysOut()).stream().filter(l -> l.contains("Losses: 0")).count() == 1);
     }
 
     
