@@ -20,6 +20,8 @@ public class SportStatistics {
         // try (Scanner reader = new Scanner(Paths.get("part04-Part04_31.SportStatistics/" + file))){
         try (Scanner reader = new Scanner(Paths.get(file))){
             while (reader.hasNextLine()) {
+
+                // Read and parse data
                 String row = reader.nextLine();
                 String[] dataArray = row.split(",");
                 String homeTeamName = dataArray[0];
@@ -27,6 +29,7 @@ public class SportStatistics {
                 String awayTeamName = dataArray[1];
                 int awayScore = Integer.valueOf(dataArray[3]);
 
+                // Handle home team data
                 boolean homeTeamExists = false;
 
                 for (Team team : teamsArrayList){
@@ -54,6 +57,7 @@ public class SportStatistics {
                     teamsArrayList.add(newTeam);
                 }
                 
+                // Handle away team data
                 boolean awayTeamExists = false;
 
                 for (Team team : teamsArrayList){
@@ -86,6 +90,7 @@ public class SportStatistics {
             System.out.println(e.getMessage());
         }
 
+        // Print data for the team the user queried, if found
         boolean found = false;
         for (Team team : teamsArrayList){
             if (team.getName().equals(teamQueried)){
@@ -102,5 +107,4 @@ public class SportStatistics {
             System.out.println("Losses: 0");
         }
     }
-
 }
