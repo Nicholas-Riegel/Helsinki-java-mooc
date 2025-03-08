@@ -42,6 +42,7 @@ public class SportStatistics {
                         if (homeScore < awayScore){
                             team.incrementLosses();
                         }
+                        break;
                     }
                 }
 
@@ -70,6 +71,7 @@ public class SportStatistics {
                         if (awayScore < homeScore){
                             team.incrementLosses();
                         }
+                        break;
                     }
                 }
 
