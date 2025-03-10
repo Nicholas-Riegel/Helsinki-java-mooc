@@ -8,11 +8,11 @@ public class PaymentCard {
     }
 
     public double balance() {
-        return this.balance;
+        return balance;
     }
 
     public void addMoney(double increase) {
-        this.balance += increase;
+        balance += increase;
     }
 
     public boolean takeMoney(double amount) {
