@@ -31,16 +31,20 @@ public class Money {
     }
     
     public Money minus(Money decreaser){
+        
         int totalEuros = this.euros - decreaser.euros;
         int totalCents = this.cents - decreaser.cents;
+        
         if (totalCents < 0){
             totalEuros--;
             totalCents = 100 + totalCents;
         }
+        
         if (totalEuros < 0){
             Money newMoneyObject = new Money(0, 0);
             return newMoneyObject;
         }
+        
         Money newMoneyObject = new Money(totalEuros, totalCents);
         return newMoneyObject;
     }
@@ -59,7 +63,6 @@ public class Money {
         if (this.cents < 10) {
             zero = "0";
         }
-
         return this.euros + "." + zero + this.cents + "e";
     }
 
