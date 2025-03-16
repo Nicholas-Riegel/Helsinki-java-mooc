@@ -33,5 +33,4 @@ public class SimpleCollection {
             return longest;
         }
     }
-
 }
