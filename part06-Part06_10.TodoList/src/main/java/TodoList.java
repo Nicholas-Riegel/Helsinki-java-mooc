@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class TodoList {
 
-    ArrayList<String> todoArrayList;
+    private ArrayList<String> todoArrayList;
 
     public TodoList(){
         todoArrayList = new ArrayList<>();
