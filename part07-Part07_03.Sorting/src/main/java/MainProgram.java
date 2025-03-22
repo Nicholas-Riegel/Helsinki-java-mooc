@@ -83,6 +83,5 @@ public class MainProgram {
         int[] numbers = {8, 3, 7, 9, 1, 2, 4};
         System.out.println(Arrays.toString(numbers));
         MainProgram.sort(numbers);
-        // System.out.println(Arrays.toString(numbers));
     }
 }
