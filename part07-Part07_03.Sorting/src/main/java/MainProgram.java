@@ -1,7 +1,6 @@
 import java.util.Arrays;
 
 public class MainProgram {
-
     
     public static int smallest(int[] array){
         int smallest = array[0];
