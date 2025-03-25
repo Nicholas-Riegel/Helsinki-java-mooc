@@ -1,7 +1,7 @@
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+// import java.util.Arrays;
+// import java.util.List;
 import java.util.Scanner;
 
 public class Searching {
@@ -43,7 +43,6 @@ public class Searching {
         } else {
             System.out.println("Found it! " + books.get(binarySearchId));
         }
-
     }
 
     public static int linearSearch(ArrayList<Book> books, int searchedId) {
@@ -57,28 +56,26 @@ public class Searching {
 
     // number of books to search for is 5
     // [0, 1, 2, 3, 4]
-        // List<Integer> list = new ArrayList<>(Arrays.asList(10, 22, 33, 44, 55)) ;
-        // int index = binarySearch(list, 10);
-        // System.out.println("The index of searched is: " + index);
+    // List<Integer> list = new ArrayList<>(Arrays.asList(0, 1, 2, 3, 4)) ;
+    // int index = binarySearch(list, 4);
+    // System.out.println("The index of searched is: " + index);
     // }
     
     public static int binarySearch(ArrayList<Book> books, long searchedId) {
-    // public static int binarySearch(List<Integer> list, long searchedId) {
         
         int begin = 0;
-        int end = books.size() -1;
-        // int end = list.size() -1;
+        int end = books.size() - 1;
         int middle;
+        int bookId;
 
         while (begin <= end){
 
             middle = (begin + end) / 2;
-            
-            if (books.get(middle).getId() == searchedId){
-            // if (list.get(middle) == searchedId){
+            bookId = books.get(middle).getId();
+
+            if (bookId == searchedId){
                 return middle;
-            } else if (searchedId < books.get(middle).getId()){
-            // } else if (searchedId < list.get(middle)){
+            } else if (searchedId < bookId){
                 end = middle - 1;
             } else {
                 begin = middle + 1;
@@ -87,4 +84,3 @@ public class Searching {
         return -1;
     }
 }
-
