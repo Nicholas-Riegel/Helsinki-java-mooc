@@ -5,9 +5,9 @@ public class Frontend {
     private Scanner scanner;
     private Grades grades;
 
-    public Frontend(Scanner scanner, Grades grades){
-        this.scanner = scanner;
-        this.grades = grades;
+    public Frontend(Scanner a, Grades b){
+        scanner = a;
+        grades = b;
     }
 
     public void start(){

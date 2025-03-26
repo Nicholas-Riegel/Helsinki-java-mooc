@@ -38,9 +38,7 @@ public class Grades {
     }
 
     public double averagePoints(){
-        int total = totalPoints();
-        double average = (double) total / points.size();
-        return average;
+        return (double) totalPoints() / points.size();
     }
 
     public String averageOfPassingPoints(){
@@ -55,8 +53,7 @@ public class Grades {
         if (passing == 0){
             return "-";
         } 
-        double averageOfPassing = (double) total / passing;
-        return "" + averageOfPassing;
+        return "" + (double) total / passing;
     }
 
     public double passPercentage(){
@@ -66,9 +63,7 @@ public class Grades {
                 numPassing++;
             }
         }
-        int totalStudents = points.size();
-        double percentPassing = (double) 100 * numPassing / totalStudents;
-        return percentPassing;
+        return (double) 100 * numPassing / points.size();
     }
 
     public String printStars(int grade){
