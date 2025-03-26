@@ -2,12 +2,12 @@ import java.util.Scanner;
 
 public class Frontend {
 
-    private RecipeBook recipeBook;
     private Scanner scanner;
+    private RecipeBook recipeBook;
 
-    public Frontend(Scanner scanner, RecipeBook recipeBook){
-        this.recipeBook = recipeBook;
-        this.scanner = scanner;
+    public Frontend(Scanner a, RecipeBook b){
+        this.scanner = a;
+        this.recipeBook = b;
     }
 
     public void start(){
@@ -18,7 +18,14 @@ public class Frontend {
 
         recipeBook.loadRecipesFromFile(fileName);        
 
-        System.out.println("Commands:\nlist - lists the recipes\nstop - stops the program\nfind name - searches recipes by name\nfind cooking time - searches recipes by cooking time\nfind ingredient - searches recipes by ingredient");
+        System.out.println(
+            "Commands:\n" 
+            + "list - lists the recipes\n" 
+            + "stop - stops the program\n" 
+            + "find name - searches recipes by name\n"
+            + "find cooking time - searches recipes by cooking time\n"
+            + "find ingredient - searches recipes by ingredient"
+        );
 
         while (true) {
             
@@ -31,9 +38,7 @@ public class Frontend {
 
             if (command.equals("list")){
                 System.out.println("Recipes:");
-                for(Recipe recipe : recipeBook.getRecipeList()){
-                    System.out.println(recipe.getName() + ", cooking time: " + recipe.getTime());
-                }
+                recipeBook.listRecipes();
             }
             
             if (command.equals("find name")){
